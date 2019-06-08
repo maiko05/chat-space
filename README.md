@@ -27,7 +27,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index: true|
 |mail|string|null: false, unique: true|
 |encrypted_password|string|null: false|
 
@@ -60,8 +60,8 @@ Things you may want to cover:
 ## messages table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false|
-|group_id|references|null: false|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 |body|text||
 |image|string||
 
