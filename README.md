@@ -58,13 +58,13 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
-## messages
+## messages table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
 |group_id|integer|null: false|
-|body|text|null: falese|
-|image|string|null: falese|
+|body|text|null: false|
+|image|string|null: false|
 
 ### Association
 - belongs_to :user
