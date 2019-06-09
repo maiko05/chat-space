@@ -14,13 +14,13 @@
     font-weight: bold;
     .user-menu {
       display: flex;
-      i {
-      cursor: pointer;
-      color: white;
-      }
-      ＆__new-group{
-        margin-left: 0.3rem;
-      }
+        li {
+          margin-left: 0.3rem;
+          i {
+          cursor: pointer;
+          color: white;
+          }
+        }
     }
     p {
       display: block;
