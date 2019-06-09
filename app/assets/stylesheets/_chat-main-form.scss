@@ -1,0 +1,53 @@
+.chat-main {
+  .form {
+    position: absolute;
+	  right: 0;
+	  bottom: 0;
+    height: 50px;
+    width: 1060px;
+    float: right;
+    padding: 20px 40px;
+    background-color: #ddd;
+    .new-message {
+      display: flex;
+      .input-box {
+        position: relative;
+        width: 100%;
+        
+        &__text {
+          height: 50px;
+          width: calc(100% - 10px);
+          padding: 0 0 0 10px;
+          color: $mainTextColor;
+          border-style: none;
+        }
+        .image-label {
+          font-size: 1.3rem;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          .i {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+          }
+          &__input {
+            display: none;
+          }
+        }
+      }
+      .new-message__submit-btn {
+        width: 100px;
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: $BlueColor;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}

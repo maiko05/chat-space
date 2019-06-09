@@ -18,7 +18,7 @@
       cursor: pointer;
       color: white;
       }
-      .user-menu__new-group{
+      ＆__new-group{
         margin-left: 0.3rem;
       }
     }
@@ -28,32 +28,6 @@
       margin-block-end: 1em;
       margin-inline-start: 0px;
       margin-inline-end: 0px;
-    }
-  }
-
-  .groups {
-    height: calc(100vh - 120px);
-    background-color: #2f3e51;
-    padding: 20px 20px 0;
-    overflow: scroll;
-    a {
-      text-decoration:none;
-      p {
-        display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-      }
-      .group__group-name {
-        font-size: 15px;
-        margin-bottom: 5px;
-        color: white;
-      }
-      .group__latest-message {
-        font-size: 11px;
-        color: white;
-      }
     }
   }
 }
