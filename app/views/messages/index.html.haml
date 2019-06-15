@@ -1,0 +1,41 @@
+.flash-box
+.wrapper
+  = render 'shared/side_bar'
+  .chat-main
+    .main-header
+      .current-group{"data-group_id" => "1"}
+        %h2.current-group__name group1 犬
+        %ul.member-list
+          Member：
+          %li.member-list__member maiko
+      %a{:href => "/groups/1/edit"}
+        .main-header__edit-btn Edit
+
+    .messages
+      .message{"data-message_id" => "3944"}
+        .upper-info
+          %p.upper-info__user maiko
+          %p.upper-info__date 2019/06/02(Sun) 17:24:50
+        %p.message__text ポメラニアン♡
+      .message{"data-message_id" => "3945"}
+        .upper-info
+          %p.upper-info__user maiko
+          %p.upper-info__date 2019/06/02(Sun) 17:24:53
+        %p.message__text 豆柴♡
+      .message{"data-message_id" => "3958"}
+        .upper-info
+          %p.upper-info__user manami
+          %p.upper-info__date 2019/06/03(Mon) 00:32:43
+        %p.message__text チワワ♡
+
+    .form
+      %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/1/messages", :enctype => "multipart/form-data", :method => "post"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        %input{:name => "authenticity_token", :type => "hidden", :value => "YRTu7y4OCfaVTFEGb2IkCFgKurwaloDtyLxh6Q02wXDbeaoCeop7GNgD+RasOHSa7D2p3Kk6AcgDHJQGAKU5fA=="}/
+        .input-box  
+          %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+          %label.image-label{:for => "message_image"} 
+            %i.fa.fa-image
+            
+            %input#message_image.image-label__input{:name => "message[image]", :type => "file"}/
+        %input.new-message__submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/

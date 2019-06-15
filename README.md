@@ -33,8 +33,8 @@ Things you may want to cover:
 
 ### Association
 - has_many :messages
-- has_many :users_groups
-- has_many :groups, through: :users_groups
+- has_many :group_users
+- has_many :groups, through: :group_users
 
 ## groups table
 
@@ -44,10 +44,10 @@ Things you may want to cover:
 
 ### Association
 - has_many :messages
-- has_many :users_groups
-- has_many :users, through: :users_groups
+- has_many :group_users
+- has_many :users, through: :group_users
 
-## users_groups table
+## group_users table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
