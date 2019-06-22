@@ -1,0 +1,18 @@
+.message
+  .upper-info
+    .upper-info__user
+      = message.user.name
+    .upper-info__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .lower-message
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+-# .messages
+-#   .message{"data-message_id" => "3944"}
+-#     .upper-info
+-#       %p.upper-info__user maiko
+-#       %p.upper-info__date 2019/06/02(Sun) 17:24:50
+-#     %p.message__text ポメラニアン♡
