@@ -7,9 +7,9 @@
         .current-group__name
           = @group.name
         %ul.member-list
-          = @group.users.each do |user|
-            Member : 
-          %end
+          Member :
+          - @group.users.each do |user|
+            = user.name
           -# %li.member-list__member
       %a{:href => "/groups/1/edit"}
         .main-header__edit-btn Edit
