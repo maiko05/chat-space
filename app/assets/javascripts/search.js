@@ -20,9 +20,6 @@ $(function() {
   }
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    // if ($("#user-search-field").val()==""){
-    //   (.add user remove)
-    // }else{
     $.ajax({
       type: 'GET',
       url: '/users',
