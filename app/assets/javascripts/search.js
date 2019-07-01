@@ -49,7 +49,6 @@ $(function() {
     var name = $(this).data('user-name');
     $(this).parent().remove();
     appendMemberHTML(id, name);
-    console.log("test")
   });
   $(document).on('click', '.user-search-remove', function(){
     $(this).parent().remove();
