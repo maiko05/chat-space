@@ -3,7 +3,7 @@
   = render 'shared/side_bar'
   .chat-main
     .main-header
-      .current-group
+      .current-group{"data-group_id" => "#{@group.id}"}
         .current-group__name
           = @group.name
         %ul.member-list
@@ -16,8 +16,6 @@
 
     .messages
       = render @messages
-      -# _messages部分テンプレートの呼び出し
-      -# 省略せずに書くと、= render partial: 'message', collection: @messages
 
     .form
       = form_for [@group, @message] do |f|
