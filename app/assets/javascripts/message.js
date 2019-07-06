@@ -1,6 +1,5 @@
 $(document).on('turbolinks:load', function() { 
 
-$(function(){
   function buildHTML(message){
     var image =``;
     if (message.image) image += `<img class="lower-message__image" src=${message.image} >`
@@ -57,7 +56,8 @@ $(function(){
       url: `/groups/${group_id}/api/messages/`,
       type: 'GET',
       dataType: 'json',
-      data: {id: last_message_id}
+      data: {id: last_message_id,
+             group_id: group_id}
     })
     .done(function(messages) {
       if (messages.length !== 0) {
@@ -73,6 +73,8 @@ $(function(){
       alert('error');
     });
   };
-  setInterval(reloadMessages, 5000);
-});
+
+  if ($('div').hasClass('.current-group__name')){
+    setInterval(reloadMessages, 5000);
+  }
 });
