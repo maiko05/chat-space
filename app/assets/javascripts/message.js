@@ -5,7 +5,7 @@ $(function(){
     var image =``;
     if (message.image) image += `<img class="lower-message__image" src=${message.image} >`
       var html = 
-       `<div class="message" data-message-id="${message.id}">
+       `<div class="message" data-message_id="${message.id}">
           <div class="upper-info">
             <div class="upper-info__user">
               ${message.user_name}
@@ -27,6 +27,7 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
+
     $.ajax({
       url: url,
       type: "POST",
@@ -51,9 +52,10 @@ $(function(){
   var reloadMessages = function() {
     last_message_id = $('.message:last').data("message_id");
     group_id = $('.current-group').data("group_id")
+    $('.form__submit').removeAttr('data-disable-with');
     $.ajax({
       url: `/groups/${group_id}/api/messages/`,
-      type: 'get',
+      type: 'GET',
       dataType: 'json',
       data: {id: last_message_id}
     })
