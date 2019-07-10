@@ -73,8 +73,10 @@ $(document).on('turbolinks:load', function() {
       alert('error');
     });
   };
-
-  if ($('div').hasClass('.current-group__name')){
-    setInterval(reloadMessages, 5000);
-  }
+    if(location.href.match(/\/groups\/\d+\/messages/)){
+      setInterval(reloadMessages, 5000);
+    }
+  // if ($('div').hasClass('.current-group__name')){
+  //   setInterval(reloadMessages, 5000);
+  // }
 });
