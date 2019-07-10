@@ -9,6 +9,7 @@
       float: left;
       height: 50px;
       width: calc(100% - 150px);
+      // padding: 0 40px 0 10px;
     }
     &__mask {
       background-color: $white;
@@ -32,6 +33,7 @@
       height: 50px;
       margin-left: 15px;
       padding: 0 30px;
+      cursor: pointer;
     }
   }
 }
