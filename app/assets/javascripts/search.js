@@ -18,9 +18,12 @@ $(document).on('turbolinks:load', function() {
                 </div>`
     $('#chat-group-users').append(html);
   }
-  $("#user-search-field").on("keyup", function() {
+  $("#user-search-field").on("input", function() {
     var input = $("#user-search-field").val();
-    console.log("success");
+    if (input.length == 0) {
+      $("#user-search-result").empty();
+      return;
+    }
     $.ajax({
       type: 'GET',
       url: '/users',
