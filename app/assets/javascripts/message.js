@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() { 
-
+$(function(){
   function buildHTML(message){
     var image =``;
     if (message.image) image += `<img class="lower-message__image" src=${message.image} >`
@@ -73,7 +73,9 @@ $(document).on('turbolinks:load', function() {
       alert('error');
     });
   };
-    if(location.href.match(/\/groups\/\d+\/messages/) && $('div').hasClass('.current-group__name')){
+    if(location.pathname.match(/\/groups\/\d+\/messages/)){
       setInterval(reloadMessages, 5000);
-    }
+      // && $('div').hasClass('.current-group__name')
+    };
+  });
 });
