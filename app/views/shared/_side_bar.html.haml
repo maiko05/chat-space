@@ -4,15 +4,15 @@
       = current_user.name
     %ul.user-menu
       %li.user-menu__new-group
-        = link_to new_group_path do
+        = link_to new_group_path ,data:{"turbolinks"=>false} do
           %i.fa.fa-edit
       %li.user-menu__edit-user
-        = link_to edit_user_path(current_user) do
+        = link_to edit_user_path(current_user) ,data:{"turbolinks"=>false} do
           %i.fa.fa-cog
   .groups
     .group
       - current_user.groups.each do |group|
-        = link_to group_messages_path(group) do
+        = link_to group_messages_path(group) ,data:{"turbolinks"=>false} do
           .group__name
             = group.name
           .group__message
