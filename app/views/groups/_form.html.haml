@@ -34,13 +34,19 @@
         </div>
         </div>
       #chat-group-users
+          %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}/
+          %p.chat-group-user__name
+            =current_user.name
+
         - group.users.each do |user|
-          #chat-group-user-22.chat-group-user.clearfix
-            %input{name: "group[user_ids][]", type: "hidden", value: user.id}/
-            %p.chat-group-user__name
-              = user.name
-        
-        
+          - if user != current_user
+            .chat-group-user.clearfix.js-chat-member
+              %input{name: "group[user_ids][]", type: "hidden", value: "#{user.id}"}/
+              %p.chat-group-user__name
+                = user.name
+              -# - unless user.name == current_user.name
+              %a.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
